@@ -43,3 +43,29 @@ body {
   visibility: visible;
   pointer-events: all;
 }
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.u-mt-small {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 8px;
+  }
+}

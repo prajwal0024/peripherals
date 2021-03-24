@@ -9,6 +9,7 @@ router.route('/login').post(authController.login);
 router.route('/forgot-password').post(authController.forgetPassoword);
 router.route('/verify-otp').post(authController.checkPasswordResetOTP);
 router.route('/reset-password').post(authController.resetPassword);
+router.route('/email-exsists').post(authController.isEmailExsits);
 
 /*
 router.route('/protected-path').get(authController.protect, (req, res) => {

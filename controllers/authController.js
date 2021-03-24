@@ -52,9 +52,9 @@ exports.signup = catchAsyncHandler(async (req, res, next) => {
   // 5. Send Response
   newUser.password = undefined;
   newUser.__v = undefined;
-  user.passwordChangedAt = undefined;
-  user.passwordResetOTP = undefined;
-  user.passwordResetOTPExpires = undefined;
+  newUser.passwordChangedAt = undefined;
+  newUser.passwordResetOTP = undefined;
+  newUser.passwordResetOTPExpires = undefined;
   res.status(200).json({
     status: 'success',
     accessToken,
@@ -288,5 +288,21 @@ exports.resetPassword = catchAsyncHandler(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     message: 'Password Reset Successfull',
+  });
+});
+
+exports.isEmailExsits = catchAsyncHandler(async (req, res, nexy) => {
+  // 1. Get email from req
+  const { email } = req.body;
+
+  // 2. Check if user exsists
+  const user = await User.findOne({ email });
+  const message = user ? 'email exsists' : 'email do not exsists';
+
+  // 3. Send Response
+  res.status(200).json({
+    status: 'success',
+    message,
+    firstName: user ? user.firstName : undefined,
   });
 });

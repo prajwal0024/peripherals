@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
 import authenticationReducer from '../features/authentication/authenticationSlice';
+import alertReducer from '../component/Alert/alertSlice';
 
 export default configureStore({
   reducer: {
-    // counter: counterReducer,
     authentication: authenticationReducer,
+    alert: alertReducer,
   },
 });

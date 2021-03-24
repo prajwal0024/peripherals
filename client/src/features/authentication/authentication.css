@@ -1,38 +1,123 @@
 .auth {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  height: 100vh;
 }
 
-.auth-input {
-  display: block;
-  padding: 0.5rem 1rem;
-  margin: 1rem auto;
+.auth-left,
+.auth-right {
+  flex: 1;
 }
 
-.auth-button {
-  display: block;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border: none;
-  padding: 1rem 2rem;
-  margin: 2rem auto;
-  cursor: pointer;
+.auth-computer-image {
+  width: 21rem;
+}
+
+.auth-computer-message {
+  font-size: 2.8rem;
+  max-width: 38rem;
+  margin: 1rem auto 0;
+  font-weight: 300;
 }
 
 .auth-heading {
-  font-size: 2.4rem;
-  font-weight: 400;
-  text-decoration: underline;
-  display: block;
-  text-align: center;
+  font-weight: 300;
+  max-width: 42rem;
+  margin: 0 auto;
 }
 
-.auth-link {
-  display: block;
-  color: var(--color-primary);
-  text-align: center;
-  font-size: 1.2rem;
-  opacity: 0.7;
+.auth-text {
+  max-width: 40rem;
+  margin: 2rem auto 0;
+  line-height: 1.5;
+}
+
+.auth-text strong {
+  font-weight: 500;
+}
+
+.auth-text a {
+  color: inherit;
+}
+
+.auth-text span {
+  background-color: rgba(76, 93, 170, 0.35);
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.auth-span-active {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.auth-text span a {
+  text-decoration: none;
+}
+
+.auth-span-active:hover {
+  background-color: rgba(76, 93, 170, 0.5);
+}
+
+.auth-button {
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 15px;
+  padding: 1.4rem 0;
+  font-size: 1.6rem;
+  color: var(--color-white);
+  width: 35%;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  transition: all 0.5s;
+  backface-visibility: hidden;
+}
+
+.auth-button:hover {
+  width: 40%;
+  box-shadow: 0 1rem 2rem rgba(76, 93, 170, 0.5);
+}
+
+.auth-dual-container {
+  display: flex;
+  max-width: 40rem;
+  margin: 2rem auto 0;
+}
+.auth-dual-container .inputfield:not(:last-child) {
+  margin-right: 2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .auth-left {
+    display: none;
+  }
+  .auth-button {
+    max-width: 32rem;
+    width: 100%;
+  }
+  .auth-button:hover {
+    max-width: 35rem;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .auth {
+    padding: 0 2rem;
+  }
+  .auth-heading {
+    margin-bottom: 4rem;
+  }
+
+  .auth-button {
+    margin-top: 3rem;
+  }
 }

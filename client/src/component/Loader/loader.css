@@ -1,0 +1,35 @@
+.loader-container {
+  background-color: #fff;
+}
+.loader-dots {
+  background-color: var(--color-primary);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.7rem;
+  margin-top: 4.5rem;
+  animation: 0.6s bounce infinite ease-in-out alternate;
+}
+
+.loader-dot-1 {
+}
+
+.loader-dot-2 {
+  animation-delay: 0.3s;
+}
+
+.loader-dot-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  from {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 0.2;
+    transform: scale(0.75);
+  }
+}

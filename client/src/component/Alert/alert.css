@@ -1,0 +1,59 @@
+.alert-container {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 8rem;
+}
+
+.alert {
+  display: inline-block;
+  background-color: #f7e4cb;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 2px solid #e0c5aa;
+  border-left: 6px solid #e0c5aa;
+  padding: 1rem 2rem;
+}
+
+.alert p {
+  margin: 0;
+}
+
+.alert-show {
+  animation: show_alert 1s ease forwards;
+}
+
+@keyframes show_alert {
+  0% {
+    transform: translateX(110%);
+  }
+  40% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+.alert-hide {
+  animation: hide_alert 1s ease forwards;
+}
+
+@keyframes hide_alert {
+  0% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}

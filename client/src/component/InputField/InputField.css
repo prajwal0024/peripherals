@@ -1,0 +1,76 @@
+.inputfield {
+  max-width: 40rem;
+  margin: 2rem auto 0;
+  position: relative;
+}
+
+.inputfield-label {
+  display: block;
+  text-align: left;
+  text-transform: capitalize;
+  margin: 0 0 0.8rem -0.2rem;
+}
+
+.inputfield-input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1.6rem;
+  padding: 1.4rem 2.4rem;
+  border-radius: 5px;
+  border: 2px solid rgba(55, 71, 144, 0.6);
+  color: rgba(55, 71, 144, 0.8);
+  line-height: 0;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.inputfield-input:focus {
+  outline: none;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 4px 10px rgba(76, 93, 170, 0.4);
+}
+
+.inputfield-input:invalid {
+  outline: none;
+  border: 2px solid #e66467;
+}
+
+.inputfield-input::placeholder {
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.inputfield-icon-container {
+  position: absolute;
+  top: 4rem;
+  right: 2px;
+  cursor: pointer;
+  fill: rgba(76, 93, 170, 0.3);
+  padding: 0 1rem;
+}
+
+.inputfield-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.inputfield-input:focus + .inputfield-icon-container {
+  fill: var(--color-primary);
+}
+
+.inputfield-icon-container:hover {
+  fill: var(--color-primary);
+}
+
+/* Modifiers */
+
+.inputfield-input-password {
+  letter-spacing: 8px;
+  padding-right: 5rem;
+}
+
+.inputfield-input-verification {
+  text-align: center;
+  letter-spacing: 2rem;
+}

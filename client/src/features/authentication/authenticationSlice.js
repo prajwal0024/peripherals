@@ -2,7 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
+  userEmail: '',
+  userName: '',
   user: {},
+  passwordResetTimestamp: '',
+  passwordResetToken: '',
 };
 
 export const authenticationSlice = createSlice({
@@ -12,13 +16,31 @@ export const authenticationSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
     },
+    setUserInfo: (state, action) => {
+      state.userEmail = action.payload.email;
+      state.userName = action.payload.firstName;
+    },
     logout: (state) => {
       state.user = {};
+      state.userEmail = '';
+      state.userName = '';
+    },
+    setPasswordResetTimestamp: (state, action) => {
+      state.passwordResetTimestamp = action.payload;
+    },
+    setPasswordResetToken: (state, action) => {
+      state.passwordResetToken = action.payload;
     },
   },
 });
 
-export const { setUser, logout } = authenticationSlice.actions;
+export const {
+  setUser,
+  setUserInfo,
+  setPasswordResetTimestamp,
+  setPasswordResetToken,
+  logout,
+} = authenticationSlice.actions;
 export default authenticationSlice.reducer;
 
 export const fetchUser = (setLoading) => async (dispatch) => {
