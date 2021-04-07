@@ -1,0 +1,237 @@
+.search-hide {
+  display: none;
+}
+.search-show {
+  display: block !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  flex: 1 !important;
+}
+
+.search {
+  display: flex;
+}
+
+.search-filter {
+  max-width: 25%;
+  background-color: white;
+  margin: 4rem 1.6rem 8rem;
+  padding: 2rem;
+  height: min-content;
+}
+
+.search-body {
+  flex: 9;
+  padding: 0 1rem;
+}
+
+.search-heading {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize;
+}
+
+.search-price-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.search-price-container > * {
+}
+
+.search-price-input {
+  background-color: var(--color-bg);
+  border: solid 1px #a3a8c0;
+  font-size: 1.6rem;
+  font-family: inherit;
+  padding: 5px 10px;
+  width: 40%;
+}
+
+.search-text-to {
+  margin: 0 1rem;
+}
+
+.search-checkbox-container {
+  margin: 0 1rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.search-checkbox {
+  margin-right: 1rem;
+}
+
+.search-checkbox-label {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.search-checkbox-container:hover > .search-checkbox-label {
+  text-decoration: underline;
+}
+
+.search-filter-container {
+  margin-bottom: 4rem;
+}
+
+/* BODY */
+.search-input-container {
+  display: flex;
+  margin-top: 4rem;
+  font-size: 1.6rem;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.8rem 2rem;
+  font-size: inherit;
+  font-family: inherit;
+  border: 2px solid #a3a8c0;
+  border-radius: 5px;
+}
+
+.search-input:focus {
+  border: 2px solid var(--color-primary);
+  outline: none;
+}
+
+.search-button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: inherit;
+  border: 0;
+  padding: 0 3rem;
+  margin-left: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  backface-visibility: hidden;
+}
+
+.search-header {
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.search-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.search-text-filter {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+  cursor: pointer;
+  letter-spacing: 1px;
+  background-color: rgba(76, 93, 170, 0.15);
+  padding: 0.5rem 2.5rem;
+  transition: all 0.3s;
+  width: max-content;
+
+  visibility: hidden;
+  pointer-events: none;
+}
+.search-text-filter:hover {
+  background-color: rgba(76, 93, 170, 0.35);
+}
+
+.search-select-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-select-container select {
+  margin-left: 1rem;
+  padding: 0.5rem 0.8rem;
+  border: 2px solid var(--color-primary);
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: black;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+.search-select-container select:focus {
+  outline: none;
+  border: 2px solid var(--color-primary);
+}
+
+.search-product-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.search-filter-error {
+  width: max-content;
+  margin: 20% auto;
+  text-align: center;
+}
+
+.search-computer-image {
+  width: 19rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-computer-message {
+  font-weight: 400;
+  font-size: 1.8rem;
+  width: 35rem;
+  line-height: 1.6;
+}
+
+@media only screen and (max-width: 950px) {
+  .search-filter {
+    display: none;
+  }
+
+  .search-body {
+    width: 100%;
+  }
+
+  .search-header-container {
+    align-items: center;
+  }
+
+  .search-text-filter {
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .search-header-container {
+    flex-direction: column;
+    /* align-items: flex-start; */
+    /* margin-left: 1rem; */
+  }
+  .search-header-container > :first-child {
+    margin-bottom: 1.5rem;
+  }
+  .search-text-filter {
+    margin-top: 2rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .search-input {
+    padding: 0.8rem 1rem;
+  }
+
+  .search-button {
+    padding: 0 2rem;
+    margin-left: 1rem;
+    border-radius: 5px;
+  }
+}

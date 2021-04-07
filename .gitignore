@@ -13,6 +13,7 @@ node_modules/
 /build
 
 # misc
+.todo
 .DS_Store
 config.env
 .env.local

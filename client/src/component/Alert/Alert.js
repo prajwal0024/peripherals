@@ -6,6 +6,7 @@ const Alert = () => {
   const { message, activate } = useSelector((state) => state.alert);
 
   const ref = useRef(null);
+  const refContainer = useRef(null);
   let isFirst = useRef(true);
 
   useEffect(() => {
@@ -14,11 +15,15 @@ const Alert = () => {
       return;
     }
     ref.current.className = 'alert alert-show';
-    setTimeout(() => (ref.current.className = 'alert alert-hide'), 3000);
+    refContainer.current.className = 'alert-container alert-container-show';
+    setTimeout(() => {
+      ref.current.className = 'alert alert-hide';
+      refContainer.current.className = 'alert-container alert-container-hide';
+    }, 3000);
   }, [activate]);
 
   return (
-    <div className='alert-container'>
+    <div ref={refContainer} className='alert-container hidden'>
       <div ref={ref} className='alert hidden'>
         <p>{message}</p>
       </div>

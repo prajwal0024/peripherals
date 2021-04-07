@@ -1,0 +1,115 @@
+.prod-search {
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+  background-color: white;
+  border: 2.5px solid #a3a8c0;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.prod-search:hover {
+  border: 2.5px solid var(--color-primary-dark);
+}
+
+.prod-search-img-container {
+  max-width: 25rem;
+  min-width: 25rem;
+  width: 100%;
+  height: 20rem;
+  background-color: white;
+  margin-right: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prod-search-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.prod-search-name {
+  font-size: 1.8rem;
+  font-weight: 400;
+  transition: all 2s;
+}
+
+.prod-search:hover .prod-search-name {
+  text-decoration: underline;
+}
+
+.prod-search-desc {
+  color: var(--color-primary);
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+.prod-search-rating-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.prod-search-rating-count {
+  background-color: var(--color-primary-dark);
+  padding: 2px 7px;
+  color: var(--color-white);
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.prod-search-rating-text {
+  color: var(--color-primary-dark);
+}
+
+.prod-search-price-container {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0 1rem;
+}
+
+.prod-search-price {
+  font-size: 2rem;
+  color: var(--color-primary-dark);
+}
+
+.prod-search-old-price {
+  color: var(--color-primary-dark);
+  opacity: 0.8;
+  text-decoration: line-through;
+  margin-left: 2rem;
+}
+
+.prod-search-price-off {
+  background-color: var(--color-primary-dark);
+  padding: 2px 5px;
+  color: white;
+  border-radius: 4px;
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .prod-search-img-container {
+    max-width: 18rem;
+    min-width: 18rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .prod-search {
+    flex-direction: column;
+  }
+  .prod-search-img-container {
+    min-width: 1rem;
+    min-height: 1rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+}

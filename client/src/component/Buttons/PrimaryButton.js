@@ -1,4 +1,6 @@
 import React from 'react';
+import './Buttons.css';
+
 import Loader from '../Loader/Loader';
 
 const PrimaryButton = ({ classes, onClick, text, loading }) => {

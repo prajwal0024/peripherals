@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import { useDispatch } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Counter } from './features/counter/Counter';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import LoginPage from './features/authentication/LoginPage';
 import CreateAccountPage from './features/authentication/CreateAccountPage';
 import HomePage from './pages/HomePage/HomePage';
@@ -15,6 +19,11 @@ import Alert from './component/Alert/Alert';
 import ForgotPasswordPage from './features/authentication/ForgotPasswordPage';
 import VerifyPage from './features/authentication/VerifyPage';
 import ResetPasswordPage from './features/authentication/ResetPasswordPage';
+import SingleProductPage from './pages/SingleProductPage/SingleProductPage';
+import ScrollToTop from './utils/ScrollToTop';
+import SearchPage from './pages/SearchPage/SearchPage';
+import Footer from './component/Footer/Footer';
+import Navbar from './component/Navbar/Navbar';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,13 +35,18 @@ function App() {
 
   return (
     <Router>
+      <Alert />
+      <Navbar />
+      <ScrollToTop />
       <Switch>
         <div className='app'>
-          <Alert />
           {loading ? (
             <LoadingPage />
           ) : (
             <>
+              <Route path='/' exact>
+                <Redirect to='/home' />
+              </Route>
               <Route
                 path='/authentication'
                 component={AuthenticationPage}
@@ -56,10 +70,13 @@ function App() {
                 exact
               />
               <Route path='/home' component={HomePage} exact />
+              <Route path='/products/:id' component={SingleProductPage} exact />
+              <Route path='/search/:query?' component={SearchPage} exact />
             </>
           )}
         </div>
       </Switch>
+      <Footer />
     </Router>
   );
 }

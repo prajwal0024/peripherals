@@ -1,5 +1,5 @@
 .loader-container {
-  background-color: #fff;
+  background-color: transparent;
 }
 .loader-dots {
   background-color: var(--color-primary);
@@ -32,4 +32,10 @@
     opacity: 0.2;
     transform: scale(0.75);
   }
+}
+
+/* Modifiers */
+.loader-center {
+  text-align: center;
+  margin-top: 10%;
 }

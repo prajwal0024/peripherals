@@ -11,15 +11,6 @@ router.route('/verify-otp').post(authController.checkPasswordResetOTP);
 router.route('/reset-password').post(authController.resetPassword);
 router.route('/email-exsists').post(authController.isEmailExsits);
 
-/*
-router.route('/protected-path').get(authController.protect, (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    message: `Access granted to ${req.user.firstName}`,
-  });
-});
-*/
-
 // Token
 router
   .route('/token')
@@ -37,4 +28,14 @@ router
     userController.getMe,
     userController.getUserById
   );
+
 module.exports = router;
+
+/*
+  router.route('/protected-path').get(authController.protect, (req, res) => {
+    res.status(200).json({
+      status: 'success',
+      message: `Access granted to ${req.user.firstName}`,
+    });
+  });
+  */

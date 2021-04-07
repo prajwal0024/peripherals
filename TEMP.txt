@@ -10,19 +10,6 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Product short description is missing'],
   },
-  type: {
-    type: String,
-    required: [true, 'Product type is missing'],
-  },
-  brand: {
-    type: String,
-    required: [true, 'Product brand is missing'],
-  },
-  color: {
-    type: String,
-    required: [true, 'Product color is missing'],
-  },
-
   price: {
     type: Number,
     required: [true, 'Product current price is missing'],
@@ -30,6 +17,18 @@ const productSchema = new mongoose.Schema({
   oldPrice: {
     type: Number,
     required: [true, 'Product old price is missing'],
+  },
+  images: [String],
+  ratingAvg: Number,
+  ratingQty: Number,
+  category: [String],
+  featured: {
+    type: Number,
+    default: 0,
+  },
+  quantity: {
+    type: Number,
+    required: [true, 'Product quantity is missing'],
   },
   discount: {
     type: Number,
@@ -39,23 +38,6 @@ const productSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-
-  ratingAvg: Number,
-  ratingQty: Number,
-
-  featured: {
-    type: Number,
-    default: 0,
-  },
-  quantity: {
-    type: Number,
-    required: [true, 'Product quantity is missing'],
-    default: 0,
-  },
-  images: [String],
-
-  properties: Object,
-  description: [String],
   information: Object,
 });
 
